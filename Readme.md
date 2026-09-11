@@ -15,7 +15,7 @@ python3 remove-passwd.py <Input.PDF.path> -o <Output.PDF.path>
 ## Dependency required
 
 - For Compression
-    `pip install Pillow`
+    `pip install Pillow`, `pip install PyMuPDF`
 
 - For password remove
     `pip install pypdf`
