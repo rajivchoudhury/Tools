@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Static browser tools for image compression, PDF compression, and PDF password removal">
+    <title>Tools</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div>
+            <h1>Tools</h1>
+            <p>Simple file utilities that run locally in your browser.</p>
+        </div>
+        <a href="https://github.com/rajivchoudhury/Tools" target="_blank" rel="noreferrer" class="github-link">GitHub ↗</a>
+    </header>
+
+    <main>
+        <section id="tool-list" class="tool-grid" aria-label="Tool list"></section>
+
+        <section id="workspace" class="workspace hidden" aria-live="polite">
+            <button id="back-button" class="back-button" type="button">← Back</button>
+
+            <div class="tool-header">
+                <div id="tool-icon" class="large-icon" aria-hidden="true"></div>
+                <div>
+                    <h2 id="tool-title"></h2>
+                    <p id="tool-description"></p>
+                </div>
+            </div>
+
+            <div id="drop-zone" class="drop-zone" tabindex="0" aria-label="Upload file area">
+                <div class="upload-icon" aria-hidden="true">↑</div>
+                <h3>Drop your file here</h3>
+                <p>or</p>
+                <label class="choose-button">
+                    Choose File
+                    <input type="file" id="file-input" hidden>
+                </label>
+                <p id="file-name" class="file-name" aria-live="polite"></p>
+            </div>
+
+            <div id="options" class="options" aria-live="polite"></div>
+
+            <button id="process-button" class="process-button" type="button" disabled>Process File</button>
+
+            <div id="progress" class="progress hidden" aria-live="polite">
+                <div class="spinner" aria-hidden="true"></div>
+                <span id="progress-text">Processing...</span>
+            </div>
+
+            <div id="error" class="error hidden" role="alert" aria-live="assertive"></div>
+
+            <div id="result" class="result hidden" aria-live="polite">
+                <div class="success-icon" aria-hidden="true">✓</div>
+                <h3>Done!</h3>
+                <p id="result-info"></p>
+                <a id="download-button" class="download-button" download>Download Result</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Files are processed locally in your browser. Nothing is uploaded.</p>
+    </footer>
+
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
