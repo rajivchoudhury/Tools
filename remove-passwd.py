@@ -2,6 +2,7 @@
 
 import argparse
 import getpass
+import importlib.util
 from pathlib import Path
 
 from pypdf import PdfReader, PdfWriter
@@ -11,6 +12,11 @@ def remove_password(input_path, output_path, password):
     reader = PdfReader(input_path)
 
     if reader.is_encrypted:
+        if importlib.util.find_spec("cryptography") is None:
+            raise RuntimeError(
+                "Missing dependency: install 'cryptography>=3.1' and 'pypdf' with "
+                "'python3 -m pip install --upgrade \"cryptography>=3.1\" \"pypdf\"'"
+            )
         if not reader.decrypt(password):
             raise ValueError("Incorrect PDF password.")
 

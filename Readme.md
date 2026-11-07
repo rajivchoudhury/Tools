@@ -18,4 +18,6 @@ python3 remove-passwd.py <Input.PDF.path> -o <Output.PDF.path>
     `pip install Pillow`, `pip install PyMuPDF`
 
 - For password remove
-    `pip install pypdf`
+    `python3 -m pip install --upgrade "cryptography>=3.1" "pypdf"`
+
+    The `cryptography` package is required for AES-encrypted PDFs.
